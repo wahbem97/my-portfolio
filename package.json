@@ -1,0 +1,12 @@
+{
+  "name": "website-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

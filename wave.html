@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Shipping Case Study | Mustafa Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#3b82f6',
+                            wave: '#a855f7', // Distinctive Purple for Wave identity
+                            waveDark: '#7e22ce'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effects */
+        .design-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .design-card:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .play-overlay {
+            transition: all 0.3s ease;
+        }
+
+        .media-card:hover .play-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .media-card:hover .play-button {
+            transform: scale(1.1);
+            color: #a855f7;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-wave selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html#projects"
+                        class="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors flex items-center gap-2">
+                        <i class="fas fa-arrow-left text-sm"></i> <span class="text-brand-accent">Mustafa</span>
+                        Portfolio
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#projects"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Back
+                            to Home</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="index.html#projects"
+                    class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Back to
+                    Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Header / Overview -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-wave/15 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] -z-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+                <a href="index.html#projects" class="hover:text-white transition-colors">Projects</a>
+                <span>/</span>
+                <span class="text-brand-wave">Wave Shipping</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-brand-wave/20 text-brand-wave text-sm font-semibold mb-6 border border-brand-wave/30 flex items-center w-max gap-2">
+                        <i class="fas fa-water"></i> Full-Stack Campaign
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Branding & Marketing: <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-wave to-pink-400">Wave
+                            Logistics</span>
+                    </h1>
+
+                    <div class="space-y-4 text-lg text-gray-300 mb-8 font-light leading-relaxed">
+                        <p>
+                            A comprehensive launch and scaling campaign for "Wave", a specialized shipping company
+                            bridging the logistics gap between China and Saudi Arabia.
+                        </p>
+                        <p>
+                            I was responsible for shaping the entire visual and strategic narrative from the ground
+                            up—crafting the brand identity, directing web development, and producing visually stunning
+                            video assets to establish absolute market authority.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                            <div class="glass p-4 rounded-xl border border-gray-700/50 border-l-2 border-l-brand-wave">
+                                <i class="fas fa-chess-knight text-brand-wave mb-2 text-xl"></i>
+                                <h4 class="text-white font-bold text-sm">Strategy & Scripting</h4>
+                                <p class="text-xs text-gray-400 mt-1">Market positioning & E-Billboard scripts</p>
+                            </div>
+                            <div class="glass p-4 rounded-xl border border-gray-700/50 border-l-2 border-l-brand-wave">
+                                <i class="fas fa-palette text-brand-wave mb-2 text-xl"></i>
+                                <h4 class="text-white font-bold text-sm">Brand Identity</h4>
+                                <p class="text-xs text-gray-400 mt-1">Logo, colors, and visual guidelines</p>
+                            </div>
+                            <div class="glass p-4 rounded-xl border border-gray-700/50 border-l-2 border-l-brand-wave">
+                                <i class="fas fa-desktop text-brand-wave mb-2 text-xl"></i>
+                                <h4 class="text-white font-bold text-sm">Web Design</h4>
+                                <p class="text-xs text-gray-400 mt-1">UI/UX supervision & layout design</p>
+                            </div>
+                            <div class="glass p-4 rounded-xl border border-gray-700/50 border-l-2 border-l-brand-wave">
+                                <i class="fas fa-video text-brand-wave mb-2 text-xl"></i>
+                                <h4 class="text-white font-bold text-sm">Motion & Reels</h4>
+                                <p class="text-xs text-gray-400 mt-1">Shooting, editing & VFX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="relative rounded-2xl overflow-hidden glass p-3 border border-gray-700/50 shadow-2xl shadow-brand-wave/20">
+                        <img src="images/wave-cover.webp" alt="Wave Brand Mockup"
+                            class="w-full h-auto rounded-xl object-cover relative z-10">
+                        <!-- Abstract purple wave graphic overlay -->
+                        <svg class="absolute bottom-0 left-0 w-full h-32 z-20 opacity-50" viewBox="0 0 1440 320"
+                            preserveAspectRatio="none">
+                            <path fill="#a855f7" fill-opacity="0.3"
+                                d="M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,149.3C672,149,768,171,864,192C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Brand Identity -->
+    <section class="py-16 border-t border-gray-800/50 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-fingerprint text-brand-wave"></i> 1. Brand Identity
+                </h2>
+                <div class="h-1 w-16 bg-brand-wave rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Forging a modern, reliable, and dynamic identity. The color
+                    palette and logo were designed to reflect maritime fluidity combined with high-tech logistics.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="md:col-span-1 design-card rounded-2xl glass p-6 border border-gray-700/50 flex flex-col justify-center">
+                    <h3 class="text-xl font-bold text-white mb-4">The Concept</h3>
+                    <p class="text-sm text-gray-400 mb-6">The logo merges the concept of ocean waves with continuous
+                        forward motion, utilizing a deep purple and vibrant violet palette to stand out in an industry
+                        traditionally dominated by reds and blues.</p>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-[#a855f7] shadow-[0_0_10px_#a855f7]"></div>
+                            <span class="text-sm font-mono text-gray-300">#660099 (Primary)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-[#ffbc00] shadow-[0_0_10px_#ffbc00]"></div>
+                            <span class="text-sm font-mono text-gray-300">#ffbc00 (Secondary)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-[#ff7900] border border-gray-600"></div>
+                            <span class="text-sm font-mono text-gray-300">#ff7900 (Tertiary)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="md:col-span-2 design-card rounded-2xl overflow-hidden glass border border-gray-700/50 bg-gray-800">
+                    <img src="images/wave-logos.png" alt="Wave Identity" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Web Design & Supervision -->
+    <section class="py-20 border-t border-gray-800/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-laptop-code text-pink-400"></i> 2. Digital Command Center
+                </h2>
+                <div class="h-1 w-16 bg-pink-400 rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Designed the UI and supervised the complete development of the
+                    company's website, ensuring a seamless user journey from quoting to tracking shipments.</p>
+            </div>
+
+            <div class="design-card rounded-2xl glass border border-gray-700/50 p-4 md:p-8">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="w-full lg:w-3/5">
+                        <a href="https://waveexp.com/" target="_blank" rel="noopener noreferrer" 
+                            class="block rounded-xl overflow-hidden bg-gray-900 border border-gray-700 shadow-2xl relative group cursor-pointer">
+                            <!-- Browser header -->
+                            <div class="bg-gray-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div
+                                    class="ml-4 bg-gray-700/50 rounded-md text-[10px] text-gray-400 px-3 py-1 font-mono w-48 text-center group-hover:text-brand-wave transition-colors flex items-center justify-center gap-1">
+                                    waveexp.com <i class="fas fa-external-link-alt text-[8px]"></i></div>
+                            </div>
+                            <img src="images/wave-web.webp"
+                                alt="Website UI" class="w-full object-cover group-hover:scale-[1.01] transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-brand-wave/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="w-full lg:w-2/5">
+                        <h3 class="text-2xl font-bold text-white mb-4">UX/UI Strategy</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            The website was constructed not just as a brochure, but as a functional portal. I led the
+                            design direction and supervised the dev team to execute a highly responsive, modern
+                            interface.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-wave/20 flex items-center justify-center text-brand-wave mt-0.5">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-gray-200 block text-sm">Interactive Tracking</strong>
+                                    <span class="text-xs text-gray-500">Designed a custom visual tracker for
+                                        containers.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-wave/20 flex items-center justify-center text-brand-wave mt-0.5">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-gray-200 block text-sm">Conversion Funnels</strong>
+                                    <span class="text-xs text-gray-500">Strategic placement of quote calculators.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Reels & Stunning Graphics -->
+    <section class="py-16 border-t border-gray-800/50 bg-gray-900/30 relative overflow-hidden">
+        <!-- Decoration -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-wave/5 rounded-full blur-[150px] -z-10 rotate-45">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-film text-brand-wave"></i> 3. Motion & Reels
+                </h2>
+                <div class="h-1 w-16 bg-brand-wave rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Shooting on location and utilizing heavy post-production to
+                    create visually striking, high-retention content for Instagram and TikTok.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Video 1 -->
+                <a href="https://www.instagram.com/p/DMKKv22OBqU/" target="_blank" rel="noopener noreferrer" 
+                    class="media-card group rounded-2xl overflow-hidden glass border border-gray-700/50 flex flex-col cursor-pointer">
+                    <div class="relative w-full aspect-[4/5] bg-gray-800 overflow-hidden">
+                        <img src="images/wave1.webp" alt="Reel 1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90">
+                        </div>
+
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <i
+                                class="fas fa-play text-5xl text-white/90 play-button transition-transform duration-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]"></i>
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 text-left">
+                            <span
+                                class="bg-gray-900/80 backdrop-blur text-brand-wave text-[10px] uppercase font-bold px-2 py-1 rounded border border-brand-wave/30 mb-2 inline-block">VFX
+                                Integration</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">Neon Route Maps Overlay</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://www.instagram.com/p/DMhhtHKtVZ6/" target="_blank" rel="noopener noreferrer" 
+                    class="media-card group rounded-2xl overflow-hidden glass border border-gray-700/50 flex flex-col cursor-pointer">
+                    <div class="relative w-full aspect-[4/5] bg-gray-800 overflow-hidden">
+                        <img src="images/wave2.webp" alt="Reel 2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90">
+                        </div>
+
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <i
+                                class="fas fa-play text-5xl text-white/90 play-button transition-transform duration-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]"></i>
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 text-left">
+                            <span
+                                class="bg-gray-900/80 backdrop-blur text-pink-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-pink-400/30 mb-2 inline-block">Cinematic
+                                Editing</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">High-Speed Warehouse Operations</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video 3 -->
+                <a href="https://www.instagram.com/p/DN3DTW92hZu/" target="_blank" rel="noopener noreferrer" 
+                    class="media-card group rounded-2xl overflow-hidden glass border border-gray-700/50 flex flex-col cursor-pointer">
+                    <div class="relative w-full aspect-[4/5] bg-gray-800 overflow-hidden">
+                        <img src="images/wave3.webp" alt="Reel 3"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90">
+                        </div>
+
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <i
+                                class="fas fa-play text-5xl text-white/90 play-button transition-transform duration-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]"></i>
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 right-4 text-left">
+                            <span
+                                class="bg-gray-900/80 backdrop-blur text-brand-wave text-[10px] uppercase font-bold px-2 py-1 rounded border border-brand-wave/30 mb-2 inline-block">Motion
+                                Graphics</span>
+                            <h3 class="text-lg font-bold text-white leading-tight">Animated Shipping Times Breakdown</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. E-Billboards & Scripting -->
+    <section class="py-16 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-ad text-yellow-400"></i> 4. E-Billboards & Scripting
+                </h2>
+                <div class="h-1 w-16 bg-yellow-400 rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Wrote the script and conceptualized the visual pacing for
+                    massive electronic billboards in Riyadh. Designed specifically for 3-second attention spans at
+                    highway speeds.</p>
+            </div>
+
+            <div class="design-card rounded-2xl overflow-hidden glass border border-gray-700/50">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Billboard Video -->
+                    <div class="relative w-full aspect-video lg:h-full lg:min-h-[380px] bg-gray-950 overflow-hidden flex items-center justify-center">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-90 transition-all duration-500 hover:scale-105">
+                            <source src="images/wavevideo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-transparent hidden lg:block z-10 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent lg:hidden z-10 pointer-events-none">
+                        </div>
+                    </div>
+
+                    <!-- Scripting Details -->
+                    <div class="p-8 lg:p-12 flex flex-col justify-center bg-gray-800/30">
+                        <div
+                            class="mb-6 flex items-center gap-2 text-brand-wave text-xs font-mono bg-brand-wave/10 w-max px-3 py-1 rounded">
+                            <i class="fas fa-pen-nib"></i> Scripting & Direction
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Workflow & Animation Supervision</h3>
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base font-light">
+                            I bridge the gap between initial concept and final visual execution by handling both the scriptwriting and animation supervision for my projects. I begin the workflow by drafting the script, creating a solid foundational blueprint that establishes the narrative core, dialogue, and pacing. Once the story is locked in, I step into a supervisory role to oversee the motion graphics and animation process. By actively guiding the timing, transitions, and overall mechanics of movement, I maintain strict quality control and ensure that the final on-screen visuals perfectly align with the script's original creative intent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 border-t border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <a href="index.html#projects"
+                class="inline-flex items-center gap-2 text-brand-wave hover:text-white transition-colors mb-8 bg-gray-900 px-6 py-3 rounded-full border border-gray-800 hover:border-brand-wave/50">
+                <i class="fas fa-arrow-left"></i> Return to Portfolio
+            </a>
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year"></span> Mustafa Portfolio.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar blur effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+
+</html>

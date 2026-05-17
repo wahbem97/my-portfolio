@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Video Editor & Marketer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#3b82f6', // Blue accent
+                            accentDark: '#2563eb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Video placeholder overlay */
+        .play-overlay {
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .play-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .portfolio-card:hover .play-button {
+            transform: scale(1.1);
+            color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors">
+                        <span class="text-brand-accent">Mustafa</span> Portfolio
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#projects"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#skills"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#contact"
+                            class="bg-brand-accent hover:bg-brand-accentDark text-white px-4 py-2 rounded-full text-sm font-bold transition-colors shadow-lg shadow-brand-accent/30">Contact
+                            Me</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#projects"
+                    class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#skills" class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#contact" class="text-brand-accent px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background decoration -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-accent/20 rounded-full blur-[120px] -z-10">
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center min-h-[400px] flex flex-col justify-center">
+            <!-- Intro Text Overlay -->
+            <div id="intro-container" class="absolute inset-0 flex flex-col items-center justify-center z-20 gap-4">
+                <div id="intro-line-1" class="text-5xl md:text-7xl font-extrabold tracking-tight text-white/90"></div>
+                <div id="intro-line-2" class="text-5xl md:text-7xl font-extrabold tracking-tight text-white"></div>
+            </div>
+
+            <!-- Main Hero Content -->
+            <div id="hero-content" class="opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <h1 id="hero-title"
+                    class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 flex flex-col items-center">
+                    <!-- Text will be injected by script -->
+                </h1>
+                <p id="hero-subtitle"
+                    class="mt-4 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light mb-10 opacity-0">
+                    Transforming ideas into high-impact visual campaigns. Specialized in motion graphics, video
+                    production,
+                    and social media strategies for global brands.
+                </p>
+                <div id="hero-buttons" class="flex flex-col sm:flex-row justify-center gap-4 opacity-0">
+                    <a href="#projects"
+                        class="bg-brand-accent hover:bg-brand-accentDark text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg shadow-brand-accent/30 hover:-translate-y-1">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="glass hover:bg-white/10 text-white px-8 py-4 rounded-full text-lg font-bold transition-all hover:-translate-y-1">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats/Logos area -->
+        <div class="mt-20 pt-10 border-t border-gray-800">
+            <p class="text-sm text-gray-500 uppercase tracking-widest mb-6 text-center">Worked across</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
+                <span class="font-bold text-xl flex items-center gap-3"><span
+                        class="w-2.5 h-2.5 rounded-full bg-brand-accent"></span> China</span>
+                <span class="font-bold text-xl flex items-center gap-3"><span
+                        class="w-2.5 h-2.5 rounded-full bg-brand-accent"></span> Saudi Arabia</span>
+                <span class="font-bold text-xl flex items-center gap-3"><span
+                        class="w-2.5 h-2.5 rounded-full bg-brand-accent"></span> UAE</span>
+                <span class="font-bold text-xl flex items-center gap-3"><span
+                        class="w-2.5 h-2.5 rounded-full bg-brand-accent"></span> Qatar (Aljazeera)</span>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="projects" class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+                <div class="h-1 w-20 bg-brand-accent mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-400 max-w-2xl mx-auto">A curated selection of campaigns, brand identities, and
+                    productions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: Import/Export -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <!-- Placeholder Image -->
+                        <img src="images/cover-tech.jpg" alt="China to KSA Campaign"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center gap-6">
+                            <a href="https://www.tiktok.com/@leaderintl.sa" target="_blank" rel="noopener noreferrer"
+                                title="View on TikTok" class="hover:scale-125 transition-transform duration-300">
+                                <i class="fab fa-tiktok text-4xl text-white/80 play-button"></i>
+                            </a>
+                            <a href="https://www.instagram.com/leaderintl/" target="_blank" rel="noopener noreferrer"
+                                title="View on Instagram" class="hover:scale-125 transition-transform duration-300">
+                                <i class="fab fa-instagram text-4xl text-white/80 play-button"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@leaderintl" target="_blank" rel="noopener noreferrer"
+                                title="View on YouTube" class="hover:scale-125 transition-transform duration-300">
+                                <i class="fab fa-youtube text-4xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-brand-accent text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            Social Campaign
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Import/Export Campaigns</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">China to Saudi Arabia</p>
+                        <p class="text-gray-400 text-sm mb-4">High-converting TikTok and Instagram video campaigns
+                            designed to bridge B2B trade relations. Focused on dynamic product showcases and logistics
+                            reliability.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Premiere Pro</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">After Effects</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Social Ads</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="import-export.html"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Aljazeera -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <img src="images/aljzeera%20cover.webp" alt="Aljazeera Production"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <a href="aljazeera.html" title="Read Case Study"
+                                class="hover:scale-125 transition-transform duration-300">
+                                <i class="fas fa-file-alt text-5xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            NEWS CHANNEL
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Production for Aljazeera</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">Documentary / News Content</p>
+                        <p class="text-gray-400 text-sm mb-4"> Professional script writing and research for valid
+                            informaion.
+                            Ensured rigorous quality control, narrative pacing, and seamless production.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Premiere Pro</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Color Grading</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Audio Mixing</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="aljazeera.html"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Car Shipping UAE -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <img src="images/car%20shipping.png" alt="UAE Car Shipping"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <a href="nejoum.html" title="Read Case Study"
+                                class="hover:scale-125 transition-transform duration-300">
+                                <i class="fas fa-file-alt text-5xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-purple-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            Branding & Motion
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Brand Identity</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">Car Shipping Company - UAE</p>
+                        <p class="text-gray-400 text-sm mb-4">Developed complete visual identity including logo
+                            animation, promotional materials, and sleek, luxury-focused video content for premium auto
+                            transport.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">After Effects</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Motion Graphics</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Design</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="nejoum.html"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Furnishing China -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <img src="images/zanli.PNG" alt="China Furnishing Company"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <a href="zanli.html" title="Read Case Study" class="hover:scale-125 transition-transform duration-300">
+                                <i class="fas fa-file-alt text-5xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-brand-accent text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            Promo Video
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Furnishing Company Campaigns</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">China</p>
+                        <p class="text-gray-400 text-sm mb-4">I have set the marketing strategy and trained
+                            employees on media prodction for social media content.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Video Editing</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Visual Effects</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="zanli.html"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: General Shipping -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <img src="images/wave-exp.JPG" alt="Shipping Company"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center gap-6">
+                            <a href="wave.html"
+                                title="Read Case Study" class="hover:scale-125 transition-transform duration-300">
+                                <i class="fas fa-file-alt text-5xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-brand-accent text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            Corporate
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Shipping Company Campaigns</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">Global Logistics</p>
+                        <p class="text-gray-400 text-sm mb-4">Created informative and engaging corporate campaigns
+                            explaining complex logistics processes through clean motion graphics and compelling editing.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Premiere Pro</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">After Effects</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="wave.html"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Cultural Documentaries -->
+                <div
+                    class="portfolio-card group rounded-2xl overflow-hidden glass hover:border-brand-accent/50 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-gray-800">
+                        <img src="images/aden.avif" alt="Cultural Documentaries Yemen"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 play-overlay flex items-center justify-center">
+                            <a href="https://youtu.be/lY0z3S6N6KM?si=hFuB2eUdoEgniyHg" target="_blank"
+                                rel="noopener noreferrer" title="Watch Documentary"
+                                class="hover:scale-125 transition-transform duration-300">
+                                <i class="fab fa-youtube text-5xl text-white/80 play-button"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            Documentary
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cultural Documentaries</h3>
+                        <p class="text-brand-accent text-sm font-medium mb-3">Aden, Yemen</p>
+                        <p class="text-gray-400 text-sm mb-4">Capturing the rich heritage and stories of Yemen through
+                            high-quality docu-story production and narrative storytelling.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Documentary</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Storytelling</span>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">Cinematography</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://youtu.be/lY0z3S6N6KM?si=hFuB2eUdoEgniyHg" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-brand-accent hover:text-white transition-colors flex items-center gap-2 font-medium group/link">
+                                Read More <i
+                                    class="fas fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">My Core Stack</h2>
+                    <div class="h-1 w-20 bg-brand-accent rounded-full mb-6"></div>
+                    <p class="text-gray-400 mb-8 text-lg">
+                        I specialize in industry-standard tools to deliver professional, broadcast-quality content. My
+                        workflow is optimized for speed without compromising creative excellence.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- After Effects Skill -->
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-xl font-semibold flex items-center gap-3">
+                                    <span
+                                        class="w-10 h-10 rounded bg-[#9999FF]/20 flex items-center justify-center text-[#9999FF]">
+                                        <i class="fas fa-cube text-xl"></i>
+                                    </span>
+                                    Adobe After Effects
+                                </span>
+                                <span class="text-gray-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-[#9999FF] h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Motion graphics, VFX, compositing, lower thirds, logo
+                                animations.</p>
+                        </div>
+
+                        <!-- Premiere Pro Skill -->
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-xl font-semibold flex items-center gap-3">
+                                    <span
+                                        class="w-10 h-10 rounded bg-[#EA77FF]/20 flex items-center justify-center text-[#EA77FF]">
+                                        <i class="fas fa-film text-xl"></i>
+                                    </span>
+                                    Adobe Premiere Pro
+                                </span>
+                                <span class="text-gray-400">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-2.5">
+                                <div class="bg-[#EA77FF] h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Non-linear editing, color correction/grading, audio
+                                mixing, pacing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Element for Skills -->
+                <div class="w-full md:w-1/2 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-brand-accent/20 to-purple-500/20 blur-3xl -z-10 rounded-full">
+                    </div>
+                    <div class="glass p-8 rounded-3xl border border-gray-700 relative shadow-2xl">
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <div
+                                class="bg-gray-800 p-4 rounded-xl text-center w-[120px] hover:-translate-y-2 transition-transform">
+                                <i class="fas fa-cut text-3xl text-gray-300 mb-2"></i>
+                                <p class="text-sm font-semibold">Video Editing</p>
+                            </div>
+                            <div
+                                class="bg-gray-800 p-4 rounded-xl text-center w-[120px] hover:-translate-y-2 transition-transform">
+                                <i class="fas fa-shapes text-3xl text-gray-300 mb-2"></i>
+                                <p class="text-sm font-semibold">Motion GFX</p>
+                            </div>
+                            <div
+                                class="bg-gray-800 p-4 rounded-xl text-center w-[120px] hover:-translate-y-2 transition-transform">
+                                <i class="fab fa-tiktok text-3xl text-gray-300 mb-2"></i>
+                                <p class="text-sm font-semibold">Social Ads</p>
+                            </div>
+                            <div
+                                class="bg-gray-800 p-4 rounded-xl text-center w-[120px] hover:-translate-y-2 transition-transform">
+                                <i class="fas fa-paint-brush text-3xl text-gray-300 mb-2"></i>
+                                <p class="text-sm font-semibold">Brand Identity</p>
+                            </div>
+                            <div
+                                class="bg-gray-800 p-4 rounded-xl text-center w-[120px] hover:-translate-y-2 transition-transform">
+                                <i class="fas fa-palette text-3xl text-gray-300 mb-2"></i>
+                                <p class="text-sm font-semibold">Color Grading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Ready to Create?</h2>
+            <p class="text-gray-400 mb-10 text-lg">Whether you need a full campaign, broadcast editing, or a brand
+                identity refresh, let's discuss how we can elevate your visual content.</p>
+
+            <a href="mailto:wahbem97@gmail.com"
+                class="inline-flex items-center justify-center gap-3 bg-brand-accent hover:bg-brand-accentDark text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg shadow-brand-accent/30 hover:-translate-y-1">
+                <i class="fas fa-envelope"></i> Get In Touch
+            </a>
+
+            <div class="mt-12 flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/mustafa-wehbi/" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-accent transition-all"
+                    title="LinkedIn">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/mustafa_wehbi" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-accent transition-all"
+                    title="Instagram">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://www.behance.net/mustafa_wehbi" target="_blank" rel="noopener noreferrer"
+                    class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-accent transition-all"
+                    title="Behance">
+                    <i class="fab fa-behance text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year"></span> MediaPro Portfolio. Designed for Visual Impact.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-transparent', 'glass');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                // Keep glass effect slightly even at top for consistency, or make fully transparent
+            }
+        });
+
+        // Optional: Simple reveal animation for elements as they scroll into view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-card, #skills > div > div').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+            observer.observe(el);
+        });
+
+        // --- Premium Clipping Reveal Animation ---
+        async function revealText(element, text, isMainHeadline = false) {
+            element.innerHTML = '';
+
+            // If main headline, handle the gradient separately for better visual
+            if (isMainHeadline) {
+                const line1 = document.createElement('div');
+                line1.className = 'overflow-hidden';
+                line1.innerHTML = '<span class="inline-block transform translate-y-full transition-transform duration-700 ease-out">Visual Storyteller &</span>';
+
+                const line2 = document.createElement('div');
+                line2.className = 'overflow-hidden';
+                line2.innerHTML = '<span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-purple-500 transform translate-y-full transition-transform duration-700 ease-out delay-200">Campaign Strategist</span>';
+
+                element.appendChild(line1);
+                element.appendChild(line2);
+
+                await new Promise(r => setTimeout(r, 50));
+                line1.firstChild.classList.remove('translate-y-full');
+                line2.firstChild.classList.remove('translate-y-full');
+                return;
+            }
+
+            const chars = text.split('');
+            const spans = chars.map((char, i) => {
+                const outer = document.createElement('span');
+                outer.className = 'inline-block overflow-hidden';
+
+                const inner = document.createElement('span');
+                inner.className = 'inline-block transform translate-y-full transition-transform duration-1000';
+                inner.style.transitionTimingFunction = 'cubic-bezier(0.16, 1, 0.3, 1)';
+                inner.innerHTML = char === ' ' ? '&nbsp;' : char;
+
+                outer.appendChild(inner);
+                element.appendChild(outer);
+                return inner;
+            });
+
+            // Sequential reveal from left to right with smoother spacing
+            for (let i = 0; i < spans.length; i++) {
+                setTimeout(() => {
+                    spans[i].classList.remove('translate-y-full');
+                }, i * 35);
+            }
+
+            // Wait for duration
+            await new Promise(r => setTimeout(r, (spans.length * 35) + 1000));
+        }
+
+        async function startHeroSequence() {
+            const introContainer = document.getElementById('intro-container');
+            const introLine1 = document.getElementById('intro-line-1');
+            const introLine2 = document.getElementById('intro-line-2');
+            const heroContent = document.getElementById('hero-content');
+            const heroTitle = document.getElementById('hero-title');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            const heroButtons = document.getElementById('hero-buttons');
+
+            // 1. Reveal Line 1 (Welcome to)
+            await revealText(introLine1, "Welcome to");
+
+            // 2. Reveal Line 2 (Mustafa's Portfolio)
+            await revealText(introLine2, "Mustafa's Portfolio");
+
+            // 3. Wait and Fade Out Intro
+            await new Promise(r => setTimeout(r, 1200));
+            introContainer.style.opacity = '0';
+            introContainer.style.filter = 'blur(10px)';
+            introContainer.style.transition = 'all 1s ease-out';
+
+            await new Promise(r => setTimeout(r, 1000));
+            introContainer.style.display = 'none';
+
+            // 4. Show Hero Content
+            heroContent.classList.remove('opacity-0', 'translate-y-10');
+
+            // 5. Reveal Hero Title
+            await revealText(heroTitle, "Visual Storyteller & Campaign Strategist", true);
+
+            // 6. Fade in rest of hero
+            heroSubtitle.style.transition = 'opacity 1s ease-out';
+            heroSubtitle.style.opacity = '1';
+            await new Promise(r => setTimeout(r, 400));
+            heroButtons.style.transition = 'opacity 1s ease-out';
+            heroButtons.style.opacity = '1';
+        }
+
+        // Start when page loads
+        window.addEventListener('DOMContentLoaded', startHeroSequence);
+    </script>
+</body>
+
+</html>

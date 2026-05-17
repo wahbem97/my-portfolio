@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Car Shipping Identity | Mustafa Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#3b82f6',
+                            uae: '#0ea5e9' // Sky blue/cyan accent for a premium, tech-forward automotive feel
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effects for project cards */
+        .design-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .design-card:hover {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+            border-color: rgba(14, 165, 233, 0.4);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-uae selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors flex items-center gap-2">
+                        <i class="fas fa-arrow-left text-sm"></i> <span class="text-brand-accent">Mustafa</span>
+                        Portfolio
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Back
+                            to Home</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="index.html" class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Back to
+                    Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Header / Overview -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-uae/10 rounded-full blur-[100px] -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px] -z-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+                <a href="index.html" class="hover:text-white transition-colors">Projects</a>
+                <span>/</span>
+                <span class="text-brand-uae">UAE Car Shipping</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-brand-uae/20 text-brand-uae text-sm font-semibold mb-6 border border-brand-uae/30">
+                        Brand Identity & UI/UX
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Driving Global Trust: <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-uae to-indigo-400">USA to
+                            UAE Logistics</span>
+                    </h1>
+
+                    <div class="space-y-4 text-lg text-gray-300 mb-8 font-light leading-relaxed">
+                        <p>
+                            A massive end-to-end design undertaking for a premium car shipping company specializing in
+                            importing vehicles from the United States to the United Arab Emirates.
+                        </p>
+                        <p>
+                            I led the comprehensive visual overhaul—starting from the foundational brand logo, expanding
+                            into a full digital ecosystem (Website, App, System Dashboard), and scaling all the way up
+                            to physical environmental designs like building signage and highway billboards.
+                        </p>
+                        <ul class="space-y-3 mt-6">
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-brand-uae"><i
+                                        class="fas fa-fingerprint"></i></span>
+                                Brand Identity & Print Materials
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-brand-uae"><i
+                                        class="fas fa-laptop-code"></i></span>
+                                Digital Ecosystem (Web, App, System)
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-brand-uae"><i
+                                        class="fas fa-building"></i></span>
+                                OOH Marketing & Environmental Design
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden glass p-3 border border-gray-700/50">
+                        <img src="images/nejoum.webp" alt="Brand Identity Hero"
+                            class="w-full h-auto rounded-xl object-cover shadow-2xl">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-uae/20 rounded-full blur-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Identity Section -->
+    <section class="py-16 border-t border-gray-800/50 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-draw-polygon text-brand-uae"></i> 1. Core Brand Identity
+                </h2>
+                <div class="h-1 w-16 bg-brand-uae rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Establishing trust and speed. The logo and print materials were
+                    designed to evoke a sense of premium logistics, utilizing sharp typography and high-end print
+                    finishes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Logo Design -->
+                <a href="https://www.behance.net/gallery/159857455/-Car-Shipping-Brand" target="_blank"
+                    rel="noopener noreferrer"
+                    class="design-card rounded-2xl glass border border-gray-700/50 overflow-hidden flex flex-col hover:border-brand-uae/50 transition-colors block group">
+                    <div class="p-8 bg-gray-800/50 flex-grow flex items-center justify-center relative overflow-hidden">
+                        <img src="images/brand-construction.webp" alt="Logo Design"
+                            class="w-full object-cover rounded-lg shadow-lg relative z-10 transition-transform duration-500 group-hover:scale-105">
+                        <!-- Subtle grid background effect -->
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-uae transition-colors">Logo
+                            & Typography</h3>
+                        <p class="text-sm text-gray-400">Conceptualized a modern emblem combining elements of motion,
+                            maritime shipping, and automotive luxury. Selected a robust sans-serif typeface to ensure
+                            high legibility across all mediums.</p>
+                    </div>
+                </a>
+
+                <!-- Print Materials -->
+                <a href="https://www.behance.net/gallery/159857455/-Car-Shipping-Brand" target="_blank"
+                    rel="noopener noreferrer"
+                    class="design-card rounded-2xl glass border border-gray-700/50 overflow-hidden flex flex-col hover:border-brand-uae/50 transition-colors block group">
+                    <div class="p-8 bg-gray-800/50 flex-grow flex items-center justify-center relative overflow-hidden">
+                        <img src="images/print.webp" alt="Print Materials"
+                            class="w-full object-cover rounded-lg shadow-lg relative z-10 transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-uae transition-colors">
+                            Corporate Stationery</h3>
+                        <p class="text-sm text-gray-400">Designed business cards, letterheads, and official customs
+                            document templates. Ensured the brand felt authoritative and reliable for international B2B
+                            and B2C clients.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Ecosystem (Web, App, System) -->
+    <section class="py-20 border-t border-gray-800/50 relative">
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-brand-uae/5 rounded-full blur-[120px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
+                    <i class="fas fa-sitemap text-indigo-400"></i> 2. Digital Ecosystem
+                </h2>
+                <div class="h-1 w-20 bg-indigo-400 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Creating a seamless user experience across multiple
+                    touchpoints: from customer acquisition to shipment tracking and internal logistics management.</p>
+            </div>
+
+            <!-- Web & App Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+                <!-- Website UI -->
+                <div class="design-card rounded-2xl glass border border-gray-700/50 p-6 flex flex-col w-full">
+                    <div class="flex items-center gap-2 mb-4 border-b border-gray-700/50 pb-4">
+                        <i class="fas fa-desktop text-gray-400"></i>
+                        <h3 class="text-lg font-bold text-white">Public Website UI/UX</h3>
+                    </div>
+                    <div class="rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+                        <!-- Browser mockup header -->
+                        <div class="bg-gray-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <div
+                                class="ml-4 bg-gray-700/50 rounded-md text-[10px] text-gray-400 px-3 py-1 font-mono w-48 text-center">
+                                shipping-uae.com</div>
+                        </div>
+                        <img src="images/website.webp" alt="Website UI" class="w-full object-cover">
+                    </div>
+                    <p class="mt-6 text-sm text-gray-400 leading-relaxed">
+                        Designed a conversion-optimized landing page featuring an instant quote calculator, robust
+                        service descriptions, and trust-building testimonials. Focused on a dark, premium aesthetic to
+                        match luxury car imports.
+                    </p>
+                </div>
+
+                <!-- Mobile App UI -->
+                <div class="design-card rounded-2xl glass border border-gray-700/50 p-6 flex flex-col w-full">
+                    <div class="flex items-center gap-2 mb-4 border-b border-gray-700/50 pb-4">
+                        <i class="fas fa-mobile-alt text-gray-400"></i>
+                        <h3 class="text-lg font-bold text-white">Client Tracking App</h3>
+                    </div>
+                    <div class="rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+                        <!-- Device/Flow mockup header -->
+                        <div class="bg-gray-800 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                            <div class="w-3.5 h-1.5 bg-gray-700 rounded-full ml-2"></div>
+                            <div class="ml-auto text-[10px] text-gray-400 font-mono">Mobile Interface Sequence</div>
+                        </div>
+                        <img src="images/app.webp" alt="App UI" class="w-full object-cover">
+                    </div>
+                    <p class="mt-6 text-sm text-gray-400 leading-relaxed">
+                        UI/UX design for the customer-facing mobile application, allowing users to track their vehicle's
+                        journey across the ocean with real-time GPS updates, push notifications, and digital document
+                        uploads. Expanded to a clean, landscape layout showing screen flow sequences.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Social Media Section -->
+            <section class="py-16 border-t border-gray-800/50 bg-gray-900/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fab fa-instagram text-pink-500"></i> 3. Social Media Content
+                        </h2>
+                        <div class="h-1 w-16 bg-gradient-to-r from-brand-uae to-pink-500 rounded-full"></div>
+                        <p class="mt-4 text-gray-400 max-w-3xl">Designed an ongoing grid strategy to showcase successful
+                            shipments, educate clients on USA auction processes, and maintain a high-end luxury
+                            aesthetic.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Social Grid Items -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden aspect-square bg-gray-800 border border-gray-700/50 hover:border-brand-uae transition-colors">
+                            <img src="images/21.webp" alt="Social Post 1"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center flex-col p-4 text-center">
+                                <i class="fas fa-heart text-white mb-2 text-xl"></i>
+                                <p class="text-white text-xs font-bold">Social Media Posts</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative rounded-xl overflow-hidden aspect-square bg-gray-800 border border-gray-700/50 hover:border-brand-uae transition-colors">
+                            <img src="images/22.webp" alt="Social Post 2"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center flex-col p-4 text-center">
+                                <i class="fas fa-heart text-white mb-2 text-xl"></i>
+                                <p class="text-white text-xs font-bold">Social Media Posts</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative rounded-xl overflow-hidden aspect-square bg-gray-800 border border-gray-700/50 hover:border-brand-uae transition-colors">
+                            <img src="images/23.webp" alt="Social Post 3"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center flex-col p-4 text-center">
+                                <i class="fas fa-heart text-white mb-2 text-xl"></i>
+                                <p class="text-white text-xs font-bold">Social Media Posts</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative rounded-xl overflow-hidden aspect-square bg-gray-800 border border-gray-700/50 hover:border-brand-uae transition-colors">
+                            <img src="images/24.webp" alt="Social Post 4"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center flex-col p-4 text-center">
+                                <i class="fas fa-heart text-white mb-2 text-xl"></i>
+                                <p class="text-white text-xs font-bold">Social Media Posts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Physical Branding (Building & Billboards) -->
+            <section class="py-16 border-t border-gray-800/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-brand-uae"></i> 4. Environmental & OOH
+                        </h2>
+                        <div class="h-1 w-16 bg-brand-uae rounded-full"></div>
+                        <p class="mt-4 text-gray-400 max-w-3xl">Translating the digital brand into massive physical
+                            spaces.
+                            Designing for real-world impact across corporate headquarters and highway advertising.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-8">
+                        <!-- Building Design -->
+                        <div
+                            class="design-card rounded-2xl overflow-hidden glass border border-gray-700/50 group relative">
+                            <div class="relative h-[300px] md:h-[400px] w-full bg-gray-900">
+                                <img src="images/27.webp" alt="Building Branding"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <!-- Dark gradient overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md">HQ Building Branding</h3>
+                                <p class="text-gray-300 max-w-2xl drop-shadow-md">Designed the exterior signage, window
+                                    frosting
+                                    patterns, and interior reception mockups for the main office in Dubai. Ensured
+                                    maximum
+                                    visibility and brand prestige for visiting clients.</p>
+                            </div>
+                        </div>
+
+                        <!-- Billboard Design -->
+                        <div
+                            class="design-card rounded-2xl overflow-hidden glass border border-gray-700/50 group relative">
+                            <div class="relative h-[250px] md:h-[350px] w-full bg-gray-900">
+                                <img src="images/bilboard.webp" alt="Billboard Design"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md">OOH Billboards</h3>
+                                <p class="text-gray-300 max-w-2xl drop-shadow-md">Created high-impact, minimalist
+                                    billboard
+                                    designs aimed at high-net-worth individuals importing classic and exotic cars from
+                                    the US.
+                                    Optimized for fast readability at highway speeds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-gray-950 py-8 border-t border-gray-800 mt-12">
+                <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+                    <a href="index.html#projects"
+                        class="inline-flex items-center gap-2 text-brand-uae hover:text-white transition-colors mb-8 bg-gray-900 px-6 py-3 rounded-full border border-gray-800">
+                        <i class="fas fa-arrow-left"></i> Return to Portfolio
+                    </a>
+                    <p class="text-gray-500 text-sm">
+                        &copy; <span id="year"></span> Mustafa Portfolio.
+                    </p>
+                </div>
+            </footer>
+
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+                // Mobile Menu Toggle
+                const btn = document.getElementById('mobile-menu-btn');
+                const menu = document.getElementById('mobile-menu');
+
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Navbar blur effect
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        navbar.classList.add('shadow-lg');
+                    } else {
+                        navbar.classList.remove('shadow-lg');
+                    }
+                });
+            </script>
+</body>
+
+</html>
