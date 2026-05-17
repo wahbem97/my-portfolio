@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljazeera Production | Mustafa Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#3b82f6', // Blue accent
+                            accentDark: '#2563eb',
+                            aj: '#f5b041' // A subtle yellow/orange accent for AJ+ vibe
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .play-overlay {
+            transition: all 0.3s ease;
+        }
+
+        .media-card:hover .play-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .media-card:hover .play-button {
+            transform: scale(1.1);
+            color: #f5b041;
+            /* Using the AJ accent color on hover */
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-aj selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html"
+                        class="text-xl font-bold tracking-tighter hover:text-brand-accent transition-colors flex items-center gap-2">
+                        <i class="fas fa-arrow-left text-sm"></i> <span class="text-brand-accent">Mustafa</span>
+                        Portfolio
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="hover:text-brand-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Back
+                            to Home</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="index.html" class="hover:text-brand-accent px-3 py-2 rounded-md text-base font-medium">Back to
+                    Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Header / Overview -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-aj/10 rounded-full blur-[100px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+                <a href="index.html" class="hover:text-white transition-colors">Projects</a>
+                <span>/</span>
+                <span class="text-brand-aj">Aljazeera & AJ+</span>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="inline-block px-4 py-1.5 rounded-full bg-brand-aj/20 text-brand-aj text-sm font-semibold mb-6 border border-brand-aj/30">
+                        Production & Publishing
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Broadcasting Culture: <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-aj to-yellow-200">Aljazeera
+                            Network</span>
+                    </h1>
+
+                    <div class="space-y-4 text-lg text-gray-300 mb-8">
+                        <p>
+                            A multi-faceted role spanning from fast-paced, highly engaging social media storytelling for
+                            AJ+ to producing broadcast-ready segments and managing digital publishing at Aljazeera's
+                            Global Headquarters in Qatar.
+                        </p>
+                        <ul class="space-y-3 mt-6">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-mobile-alt mt-1.5 text-brand-aj"></i>
+                                <div>
+                                    <strong class="text-white block">AJ+ Digital Storytelling</strong>
+                                    <span class="text-sm text-gray-400">Produced viral, culturally significant vertical
+                                        stories tailored for younger demographics and optimized for social
+                                        algorithms.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-tv mt-1.5 text-brand-aj"></i>
+                                <div>
+                                    <strong class="text-white block">Broadcast Production</strong>
+                                    <span class="text-sm text-gray-400">Filmed and edited high-fidelity segments for the
+                                        Aljazeera Morning Show, bringing local international stories to millions of
+                                        viewers.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-globe mt-1.5 text-brand-aj"></i>
+                                <div>
+                                    <strong class="text-white block">Social Media Publisher (Doha HQ)</strong>
+                                    <span class="text-sm text-gray-400">Managed content distribution, engaging massive
+                                        audiences from the heart of the global newsroom.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden glass p-2">
+                        <img src="images/aljzeera%20cover.webp"
+                            alt="Aljazeera HQ" class="w-full h-auto rounded-xl object-cover shadow-2xl">
+                        <!-- Decorative elements -->
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-brand-accent/30 rounded-full blur-xl"></div>
+                        <div class="absolute -top-4 -right-4 w-32 h-32 bg-brand-aj/30 rounded-full blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AJ+ Cultural Stories Section -->
+    <section class="py-16 border-t border-gray-800/50 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fab fa-youtube text-red-500"></i> AJ+ Cultural Stories
+                </h2>
+                <div class="h-1 w-16 bg-brand-aj rounded-full"></div>
+                <p class="mt-4 text-gray-400 max-w-3xl">Deep-dive cultural mini-documentaries optimized for YouTube.
+                    These stories required extensive research, dynamic pacing, and culturally sensitive editing to
+                    engage a global audience.</p>
+            </div>
+
+            <!-- YouTube grid for social stories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-16">
+
+                <!-- Story 1: Number 4 -->
+                <a href="https://youtu.be/5Dxr94FXUzE?si=FdfAis0jfeHqzH_3" target="_blank" rel="noopener noreferrer"
+                    class="media-card group rounded-2xl overflow-hidden glass border border-gray-700/50 flex flex-col hover:border-brand-aj/50 transition-colors block">
+                    <div class="relative w-full aspect-video bg-gray-800">
+                        <img src="https://img.youtube.com/vi/5Dxr94FXUzE/maxresdefault.jpg" alt="AJ+ Story 1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/30 play-overlay flex items-center justify-center">
+                            <i
+                                class="fab fa-youtube text-6xl text-white/90 play-button transition-transform duration-300 drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div
+                            class="inline-block px-3 py-1 rounded bg-yellow-500/20 text-yellow-400 text-xs font-bold mb-4 w-max uppercase tracking-wider">
+                            Culture & Society</div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">The Mystery of Number 4</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Why do many Chinese buildings skip the 4th floor? We produced a highly engaging video essay
+                            exploring "Tetraphobia," unraveling the linguistic nuances where the number four sounds
+                            strikingly similar to the word for death.
+                        </p>
+                        <div class="flex gap-2 mt-auto">
+                            <span
+                                class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700">Motion
+                                Graphics</span>
+                            <span
+                                class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700">YouTube
+                                Format</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Story 2: Arabic & Malay -->
+                <a href="https://youtu.be/eMhVVr5AbB0?si=3xa__-i-vJQ8eUUk" target="_blank" rel="noopener noreferrer"
+                    class="media-card group rounded-2xl overflow-hidden glass border border-gray-700/50 flex flex-col hover:border-brand-aj/50 transition-colors block">
+                    <div class="relative w-full aspect-video bg-gray-800">
+                        <img src="https://img.youtube.com/vi/eMhVVr5AbB0/maxresdefault.jpg" alt="AJ+ Story 2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/30 play-overlay flex items-center justify-center">
+                            <i
+                                class="fab fa-youtube text-6xl text-white/90 play-button transition-transform duration-300 drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div
+                            class="inline-block px-3 py-1 rounded bg-blue-500/20 text-blue-400 text-xs font-bold mb-4 w-max uppercase tracking-wider">
+                            History & Linguistics</div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Arabic & Malay: The Hidden Link</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            A visual journey tracing the historical trade routes that embedded Arabic vocabulary deeply
+                            into the Malay language. This piece highlighted shared heritage, utilizing maps, animations,
+                            and fast-paced narration.
+                        </p>
+                        <div class="flex gap-2 mt-auto">
+                            <span
+                                class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700">Research
+                                Compilation</span>
+                            <span
+                                class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700">Typography</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Aljazeera Morning Show Section -->
+    <section class="py-16 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <i class="fas fa-video text-brand-accent"></i> Broadcast Production
+                </h2>
+                <div class="h-1 w-16 bg-brand-accent rounded-full"></div>
+            </div>
+
+            <div class="glass rounded-3xl border border-gray-700/50 overflow-hidden flex flex-col lg:flex-row">
+                <!-- Video Preview -->
+                <a href="https://youtu.be/Oe4f2gzhkyE?si=983TxIrBpklKRMyA" target="_blank" rel="noopener noreferrer"
+                    class="media-card group w-full lg:w-3/5 relative aspect-video bg-gray-900 border-b lg:border-b-0 lg:border-r border-gray-700/50 block">
+                    <img src="https://img.youtube.com/vi/Oe4f2gzhkyE/maxresdefault.jpg"
+                        alt="Morning Show Broadcast"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/40 play-overlay flex items-center justify-center">
+                        <i
+                            class="fas fa-play-circle text-7xl text-white/90 play-button transition-transform duration-300 drop-shadow-2xl"></i>
+                    </div>
+                    <div class="absolute top-4 left-4 flex gap-2">
+                        <span
+                            class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg uppercase tracking-wide flex items-center gap-1">
+                            <i class="fas fa-circle text-[8px] animate-pulse"></i> ON AIR
+                        </span>
+                        <span class="bg-black/60 backdrop-blur text-white text-xs px-3 py-1 rounded shadow-lg">Aljazeera
+                            Morning Show</span>
+                    </div>
+                </a>
+
+                <!-- Details -->
+                <div class="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 text-9xl text-gray-800/30 opacity-50"><i
+                            class="fas fa-music"></i></div>
+                    <h3 class="text-3xl font-bold text-white mb-4 relative z-10">The Sound of Malaysia</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed relative z-10">
+                        Transitioning from digital to traditional broadcast, I produced a dedicated feature segment for
+                        the renowned Aljazeera Morning Show. The piece explored the rich, traditional local music of the
+                        Malays, bringing a vibrant cultural soundscape to an international TV audience.
+                    </p>
+                    <ul class="space-y-4 relative z-10">
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i class="fas fa-check-circle text-brand-accent"></i> High-end broadcast editing standards
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i class="fas fa-check-circle text-brand-accent"></i> Audio mixing for television acoustics
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i class="fas fa-check-circle text-brand-accent"></i> Narrative pacing for a morning
+                            audience
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HQ Experience Section -->
+    <section
+        class="py-20 border-t border-gray-800/50 relative overflow-hidden bg-gradient-to-b from-transparent to-gray-900/50">
+        <!-- Background decoration -->
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-accent/5 rounded-full blur-[120px] -z-10">
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass p-8 md:p-12 rounded-3xl border border-gray-700/50 shadow-2xl">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+
+                    <div
+                        class="w-full md:w-1/3 text-center md:text-left border-b md:border-b-0 md:border-r border-gray-700/50 pb-8 md:pb-0 md:pr-8">
+                        <div
+                            class="w-20 h-20 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-6 border border-gray-700 shadow-inner">
+                            <i class="fas fa-building text-4xl text-brand-aj"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Aljazeera HQ</h3>
+                        <p class="text-brand-aj font-medium tracking-wide mb-4">Doha, Qatar</p>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Role</p>
+                        <p class="text-lg text-gray-300">Social Media Publisher</p>
+                    </div>
+
+                    <div class="w-full md:w-2/3">
+                        <i class="fas fa-quote-left text-3xl text-gray-700 opacity-50 mb-4 block"></i>
+                        <p class="text-lg text-gray-300 font-light leading-relaxed mb-6">
+                            Working directly from the global headquarters in Doha provided an unparalleled view into the
+                            mechanics of a world-class news organization. As a Social Media Publisher, I was responsible
+                            for taking complex, breaking news and broadcast narratives and translating them into
+                            digestible, high-impact digital formats.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+                                <i class="fas fa-chart-line text-brand-accent mb-2"></i>
+                                <h4 class="text-sm font-bold text-white mb-1">Audience Growth</h4>
+                                <p class="text-xs text-gray-400">Optimizing posts for maximum reach across regional
+                                    platforms.</p>
+                            </div>
+                            <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+                                <i class="fas fa-bolt text-yellow-500 mb-2"></i>
+                                <h4 class="text-sm font-bold text-white mb-1">Real-Time Publishing</h4>
+                                <p class="text-xs text-gray-400">Managing the fast-paced cycle of global news alerts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="index.html#projects"
+                    class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-gray-800/50 px-6 py-3 rounded-full hover:bg-gray-800 border border-gray-700">
+                    <i class="fas fa-arrow-left"></i> Return to Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year"></span> Mustafa Portfolio.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar blur effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+
+</html>
